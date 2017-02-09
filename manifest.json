@@ -1,0 +1,107 @@
+{
+	"name" : "group_basicDatatypes.application",
+	"version" : "1.0",
+	"type" : "ipaas",
+	"propertyPrefix" : "iPaaS_USER_OverRIDE_",
+	"properties" : [
+		{
+			"name" : "/newGroup/gpboolean",
+			"datatype" : "boolean",
+			"default" : "false"
+		},
+
+		{
+			"name" : "/newGroup/gpDateTime",
+			"datatype" : "datetime",
+			"default" : "2015-04-12T14:20:10-07:00"
+		},
+
+		{
+			"name" : "/newGroup/gpStr",
+			"datatype" : "string",
+			"default" : "gp_data"
+		},
+
+		{
+			"name" : "/newGroup/gpint",
+			"datatype" : "integer",
+			"default" : "333"
+		},
+
+		{
+			"name" : "/newGroup/gplong",
+			"datatype" : "integer",
+			"default" : "7777777"
+		}
+	],
+	"endpoints" : [
+		{
+			"name" : "Resource",
+			"protocol" : "http",
+			"port" : "8080",
+			"spec" : {
+				"name" : "group_basicDatatypes.application",
+				"version" : "v1"
+			},
+			"swagger" : {
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Summary about the new REST service.",
+    "description" : "Summary about the new REST service."
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/resource" : {
+      "get" : {
+        "description" : "",
+        "operationId" : "get-resource",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a Resource to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Resource"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Resource" : {
+      "type" : "object",
+      "required" : [ "datetimeDT", "longDT", "stringDT" ],
+      "properties" : {
+        "stringDT" : {
+          "type" : "string"
+        },
+        "integerDT" : {
+          "type" : "integer"
+        },
+        "boolDT" : {
+          "type" : "boolean"
+        },
+        "datetimeDT" : {
+          "type" : "string"
+        },
+        "longDT" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
+		},
+		{
+			"type" : "private",
+			"pingable" : true,
+			"protocol" : "http",
+			"port" : "7777"
+		}
+	]
+}
