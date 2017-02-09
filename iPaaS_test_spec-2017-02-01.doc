@@ -1,0 +1,382 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>testspec iPaaS-iPaaS - 170Release-IPAS3484:-Import and Export APISpecs from Github</title>
+<link type="text/css" rel="stylesheet" href="http://testlink.tibco.com/testlink/gui/themes/default/css/tl_documents.css" />
+<style type="text/css" media="print">.notprintable { display:none;}</style>
+</head>
+<body>
+<div>
+<div style="float:right;">TIBCO Software Inc</div>
+<div>&nbsp;</div><hr />
+<p style="text-align: center;"><img alt="TestLink logo" title="configure using $tlCfg->document_generator->company_logo" height="53" src="http://testlink.tibco.com/testlink/gui/themes/default/images/TIBCO-loginlogo.png" /></div>
+<div class="doc_title"><p>Test Specification</p></div>
+<div class="doc_title" style="text-align:left;margin: auto;"><p>Test Project: iPaaS-iPaaS<br>Test Suite: iPaaS-iPaaS - 170Release-IPAS3484:-Import and Export APISpecs from Github</p></div>
+<div class="summary"><p id="printedby">Printed by TestLink on 02/01/2017</p></div>
+<div class="pagefooter" id="copyright">2014-2015 &copy; TIBCO Software Inc</div>
+<h1 class="general" style="page-break-before: always">Table Of Contents</h1><div class="toc"><b><p style="padding-left: 20px;"><a href="#toc_1">1.170Release-IPAS3484:-Import and Export APISpecs from Github</a></p></b>
+<p style="padding-left: 45px;"><a href="#toc_tc976578">iPaaS-1572: Import json file from Github in APISpec from users own account</a></p><p style="padding-left: 45px;"><a href="#toc_tc976580">iPaaS-1573: Import yaml file from Github in APISpec from own account</a></p><p style="padding-left: 45px;"><a href="#toc_tc976582">iPaaS-1574: Import invalid file from Gtihub in APISpec from users own account</a></p><p style="padding-left: 45px;"><a href="#toc_tc976584">iPaaS-1575: Export json file from APISpec in Github from users own account</a></p><p style="padding-left: 45px;"><a href="#toc_tc976586">iPaaS-1576: Export yaml file from APISpec in Github from users own account</a></p><p style="padding-left: 45px;"><a href="#toc_tc976622">iPaaS-1577: Import and Export file from Github:-User is collaborator of organisation with Read permission</a></p><p style="padding-left: 45px;"><a href="#toc_tc976626">iPaaS-1579: Import and Export file from Github:-User is collaborator of organisation with Write permission</a></p><p style="padding-left: 45px;"><a href="#toc_tc976630">iPaaS-1581: Import and Export file from Github:-User is collaborator of organisation with Admin permission</a></p><p style="padding-left: 45px;"><a href="#toc_tc976634">iPaaS-1583: Import and Export when User is removed as collaborator from an organisation</a></p><p style="padding-left: 45px;"><a href="#toc_tc976663">iPaaS-1584: Import and Export file from Github:-User is team member of organisation and has Read permission</a></p><p style="padding-left: 45px;"><a href="#toc_tc976665">iPaaS-1585: Import and Export file from Github:-User is team member of organisation and has Write permission</a></p><p style="padding-left: 45px;"><a href="#toc_tc976667">iPaaS-1586: Import and Export file from Github:-User is team member of organisation and has Admin permission</a></p><p style="padding-left: 45px;"><a href="#toc_tc976669">iPaaS-1587: Import and Export file from Github:-User is blocked in an organisation</a></p><p style="padding-left: 45px;"><a href="#toc_tc976671">iPaaS-1588: Import and Export file from Github:-User is only member not collaborator of organisation with Read p</a></p><p style="padding-left: 45px;"><a href="#toc_tc976673">iPaaS-1589: Login into Github when browser has cache</a></p><p style="padding-left: 45px;"><a href="#toc_tc976675">iPaaS-1590: Login into Github when browser has no cache</a></p><p style="padding-left: 45px;"><a href="#toc_tc976677">iPaaS-1591: Login into Github when authorisation access from github is revoked</a></p><p style="padding-left: 45px;"><a href="#toc_tc976679">iPaaS-1592: Login into Github when authorisation access from github is not revoked</a></p><p style="padding-left: 45px;"><a href="#toc_tc978074">iPaaS-1595: Login into Github when local token is deleted and browser caches are deleted for same credentials</a></p><p style="padding-left: 45px;"><a href="#toc_tc978076">iPaaS-1596: Login into Github when token is deleted and browser caches are not deleted for same credentials</a></p><p style="padding-left: 45px;"><a href="#toc_tc978078">iPaaS-1597: Login into Github when local token is deleted and browser caches are deleted for different credentia</a></p><p style="padding-left: 45px;"><a href="#toc_tc978080">iPaaS-1598: Login into Github when local token is deleted and browser caches are not deleted for different crede</a></p></div><h1 class="doclevel" >Scope</h1>
+<div class="txtlevel"><p>&nbsp;Integration Platform As A Service</p>
+<p><span style="font-family: arial, sans-serif; font-size: 12.8000001907349px;">Owner - Allyssa Luu ,&nbsp;</span><span style="font-family: arial, sans-serif; font-size: 12.8000001907349px;">Ruirui Du, Lakshmi Peddu</span></p></div>
+ <br/><a name='toc_'></a>
+<h1 class='doclevel'>1.Test Suite : 170Release-IPAS3484:-Import and Export APISpecs from Github</h1>
+<div><p>&nbsp;This test suite is to check the functionaltiy of new feature to import and export APISpecs from github.User should be having github account with repository</p></div><p><table class="cf"><tr><td  class="labelHolder"  >JIRA Task for QA Review</td><td  ></td></tr>
+<tr><td  class="labelHolder"  >JIRA Task for Dev Review</td><td  ></td></tr>
+<tr><td  class="labelHolder"  >Suite Level Preconditions</td><td  ></td></tr>
+<tr><td  class="labelHolder"  >QA Review Comments</td><td  ></td></tr>
+<tr><td  class="labelHolder"  >Dev Review Comments</td><td  ></td></tr>
+</table></p><a name="toc_tc976578"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1572: Import json file from Github in APISpec from users own account&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc976580"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1573: Import yaml file from Github in APISpec from own account&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc976582"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1574: Import invalid file from Gtihub in APISpec from users own account&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc976584"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1575: Export json file from APISpec in Github from users own account&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc976586"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1576: Export yaml file from APISpec in Github from users own account&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc976622"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1577: Import and Export file from Github:-User is collaborator of organisation with Read permission&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td colspan="6"><span class="label">Summary:</span><br /><p>&nbsp;This test case to check functionality when user is collaborator of an organization having Read permission</p></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc976626"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1579: Import and Export file from Github:-User is collaborator of organisation with Write permission&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td colspan="6"><span class="label">Summary:</span><br /><p>&nbsp;This test case is test functionality of import file fom github when user is collaborator of an organisation and having Write acces</p></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc976630"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1581: Import and Export file from Github:-User is collaborator of organisation with Admin permission&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td colspan="6"><span class="label">Summary:</span><br /><p>&nbsp;This test is to validate the functionality of importing file from Github with Admin access</p></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc976634"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1583: Import and Export when User is removed as collaborator from an organisation&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td colspan="6"><span class="label">Summary:</span><br /><p>&nbsp;This test is to validate functionaltiy that user is not able to see repositories of organistion when he is removed as collaborator</p></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc976663"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1584: Import and Export file from Github:-User is team member of organisation and has Read permission&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td colspan="6"><span class="label">Summary:</span><br /><p>&nbsp;This test is to validate the functionality of import and export file when user is team member of an organisation.</p></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc976665"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1585: Import and Export file from Github:-User is team member of organisation and has Write permission&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td colspan="6"><span class="label">Summary:</span><br /><p>&nbsp;This test is to validate functionality of import and export file when user is team member of an organisation with Write permission</p></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc976667"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1586: Import and Export file from Github:-User is team member of organisation and has Admin permission&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td colspan="6"><span class="label">Summary:</span><br /><p>This test is to validate import and export files when user is team member of an organisation with Admin access</p></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc976669"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1587: Import and Export file from Github:-User is blocked in an organisation&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td colspan="6"><span class="label">Summary:</span><br /><p>&nbsp;This test is to validate functionality of import and export files when user is blocked in an organisation</p></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc976671"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1588: Import and Export file from Github:-User is only member not collaborator of organisation with Read p&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td colspan="6"><span class="label">Summary:</span><br /><p>&nbsp;This test is to validate functionality of import and export when user is only member not collaborator</p></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc976673"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1589: Login into Github when browser has cache&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td colspan="6"><span class="label">Summary:</span><br /><p>&nbsp;This test is to validate if bwoser has cache of github ,user doesnt need to input creadentials</p></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc976675"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1590: Login into Github when browser has no cache&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td colspan="6"><span class="label">Summary:</span><br /><p>&nbsp;This functionality is to validate that if browser has no github cache ,user needs to input credentials</p></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc976677"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1591: Login into Github when authorisation access from github is revoked&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td colspan="6"><span class="label">Summary:</span><br /><p>This test is to validate login into github when authorisation access from github is revoked</p></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc976679"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1592: Login into Github when authorisation access from github is not revoked&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td colspan="6"><span class="label">Summary:</span><br /><p>This test is to validate functionality of login when authorisation access from github is not revoked</p></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc978074"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1595: Login into Github when local token is deleted and browser caches are deleted for same credentials&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td colspan="6"><span class="label">Summary:</span><br /><p>&nbsp;This test is to validate functionaltiy of login into github via Import/export feature when local token from developers tool is removed and browser caches are deleted too for same credentials</p></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc978076"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1596: Login into Github when token is deleted and browser caches are not deleted for same credentials&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td colspan="6"><span class="label">Summary:</span><br /><p>&nbsp;This test is validate functionaltiy of login into github via import/export feature when local token is deleted and browser caches are not deleted for same credentials</p></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc978078"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1597: Login into Github when local token is deleted and browser caches are deleted for different credentia&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td colspan="6"><span class="label">Summary:</span><br /><p>&nbsp;This test is to validate functionality of login into github via import/export feature when local token and browser caches are deleted for different credentials</p></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+<a name="toc_tc978080"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="6">Test Case iPaaS-1598: Login into Github when local token is deleted and browser caches are not deleted for different crede&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">Nikhil Joshi</td></tr>
+<tr><td colspan="6"><span class="label">Summary:</span><br /><p>&nbsp;This test case is validate functionalty of login into github via import/export feature when local token is deleted but not browser caches for different credentials</p></td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">Medium</td></tr>
+<tr><td colspan="6"></td></tr><tr><td > QA Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > QA Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Implemented:</td><td  colspan = "5" ></td></tr>
+<tr><td > Dev Review Comments:</td><td  colspan = "5" ></td></tr>
+<tr><td > Test Data SVN Location:</td><td  colspan = "5" ></td></tr>
+<tr><td > Invalid or Deprecated:</td><td  colspan = "5" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="5">&nbsp;None<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Last Result</span></td><td colspan="5"><b>Not Run</b></td></tr>
+</table>
+</div>
+
+</body>
+</html>
